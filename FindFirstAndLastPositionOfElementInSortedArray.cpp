@@ -3,14 +3,14 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {5,7,7,8,8,10};
+    int arr[] = {1, 2, 2, 2, 3, 4, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int target = 8;
+    int target = 2;
 
-    int start = 0, end = n - 1;
-    int first = -1, last = -1, mid;
+    int start = 0, end = n - 1, mid;
+    int first = -1, last = -1;
 
-    // First occurrence
+    // Find First Position
     while (start <= end)
     {
         mid = start + (end - start) / 2;
@@ -30,11 +30,10 @@ int main()
         }
     }
 
-    // Reset start and end
+    // Find Last Position
     start = 0;
     end = n - 1;
 
-    // Last occurrence
     while (start <= end)
     {
         mid = start + (end - start) / 2;
@@ -54,7 +53,8 @@ int main()
         }
     }
 
-    cout << first << " " << last;
+    cout << "First Position = " << first << endl;
+    cout << "Last Position = " << last << endl;
 
     return 0;
 }
